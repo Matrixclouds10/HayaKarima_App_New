@@ -1,0 +1,1 @@
+ C:\\work\\matrix\\hayah-karima-appuser\\.dart_tool\\flutter_build\\811719b1cd0f11dc5712441e53632e5d\\native_assets.yaml: 
