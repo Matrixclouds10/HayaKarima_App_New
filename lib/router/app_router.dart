@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:page_transition/page_transition.dart';
+
+import '../data/echo.dart';
 import '../data/model/model_beneficiaries.dart';
 import '../data/model/model_news.dart';
 import '../data/model/model_project.dart';
@@ -13,12 +15,12 @@ import '../presentation/bottom_bar/donations/send_donations.dart';
 import '../presentation/bottom_bar/new_details/new_details.dart';
 import '../presentation/splashScreen.dart';
 import 'router_path.dart';
-import 'package:page_transition/page_transition.dart';
 
 class AppRouter {
-  AppRouter() {}
+  AppRouter();
 
   Route? generateRoute(RouteSettings settings) {
+    kEcho(" AppRouter generateRoute ${settings.name}");
     switch (settings.name) {
       case all_routs:
         // return PageTransition(child: SplashScreen(), type: PageTransitionType.scale);
@@ -54,6 +56,7 @@ class AppRouter {
 
         return _generateMaterialRoute(Donations_AboutBeneficiaries(model));
     }
+    return null;
   }
 }
 

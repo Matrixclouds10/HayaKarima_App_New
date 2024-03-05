@@ -13,56 +13,51 @@ class PasswordField extends StatelessWidget {
   final onPressed;
   final label;
 
-  PasswordField(
-      {required this.hidePassword,
-      required this.textEditingController,
-      required this.onSaved,
-      required this.onPressed,
-      required this.label});
+  PasswordField({required this.hidePassword, required this.textEditingController, required this.onSaved, required this.onPressed, required this.label});
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Container(
+    return Transform.scale(
+        scaleY: 0.9,
         child: TextFormField(
-      keyboardType: TextInputType.text,
-      controller: textEditingController,
-      onSaved: onSaved,
-      style: TextStyle(
-        fontSize: 18.0.sp,
-        color: HexColor(MyColors.black),
-      ),
-      validator: (input) =>
-          input!.length < 3 ? "${LocaleKeys.password.tr()}" : null,
-      obscureText: hidePassword,
-      decoration: InputDecoration(
-        filled: true,
-        // prefixIcon: widget.icon,
-        fillColor: HexColor(MyColors.white),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(0.w),
-          borderSide: BorderSide(
-            color: HexColor(MyColors.white),
+          keyboardType: TextInputType.text,
+          controller: textEditingController,
+          onSaved: onSaved,
+          style: TextStyle(
+            fontSize: 18.0.sp,
+            color: HexColor(MyColors.black),
           ),
-        ),
+          validator: (input) => input!.length < 3 ? "${LocaleKeys.password.tr()}" : null,
+          obscureText: hidePassword,
+          decoration: InputDecoration(
+            filled: true,
+            // prefixIcon: widget.icon,
+            fillColor: HexColor(MyColors.white),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(0.w),
+              borderSide: BorderSide(
+                color: HexColor(MyColors.white),
+              ),
+            ),
 
-        hintText: "$label",
-        prefixIcon: Icon(
-          Icons.lock,
-          color: HexColor(MyColors.green),
-        ),
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(0.w),
-          borderSide: BorderSide(
-            color: HexColor(MyColors.white),
+            hintText: "$label",
+            prefixIcon: Icon(
+              Icons.lock,
+              color: HexColor(MyColors.green),
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(0.w),
+              borderSide: BorderSide(
+                color: HexColor(MyColors.white),
+              ),
+            ),
+            suffixIcon: IconButton(
+              onPressed: onPressed,
+              color: HexColor(MyColors.green),
+              icon: Icon(hidePassword ? Icons.visibility_off : Icons.visibility),
+            ),
           ),
-        ),
-        suffixIcon: IconButton(
-          onPressed: onPressed,
-          color: HexColor(MyColors.green),
-          icon: Icon(hidePassword ? Icons.visibility_off : Icons.visibility),
-        ),
-      ),
-    ));
+        ));
   }
 }

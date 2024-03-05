@@ -15,23 +15,14 @@ class NameInput extends StatelessWidget {
   final hintText;
   final onTap;
 
-  const NameInput(
-      {Key? key,
-      required this.textEditingController,
-      required this.onSaved,
-      required this.onChanged,
-      required this.validation_Message,
-      required this.maxLines,
-      required this.icon,
-      required this.hintText,
-      this.onTap})
-      : super(key: key);
+  const NameInput({Key? key, required this.textEditingController, required this.onSaved, required this.onChanged, required this.validation_Message, required this.maxLines, required this.icon, required this.hintText, this.onTap}) : super(key: key);
   static final RegExp nameRegExp = RegExp(r'^[a-zA-Z ]{2,20}$', unicode: false);
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Container(
+    return Transform.scale(
+      scaleY: 0.9,
       child: TextFormField(
         controller: textEditingController,
         keyboardType: TextInputType.name,

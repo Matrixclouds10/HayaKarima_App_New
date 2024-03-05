@@ -113,7 +113,7 @@ class Donations_Send extends StatelessWidget {
               ),
             ),
             // Container(
-            //   margin: EdgeInsets.only(left: 20.w, right: 20.w, top: 10.h),
+            //   margin: EdgeInsets.only(left: 20.w, right: 20.w, top: 4.h),
             //   decoration: BoxDecoration(
             //     color: HexColor(
             //         MyColors.white), //new Color.fromRGBO(255, 0, 0, 0.0),
@@ -138,7 +138,7 @@ class Donations_Send extends StatelessWidget {
             //   ),
             // ),
             // Container(
-            //   margin: EdgeInsets.only(left: 20.w, right: 20.w, top: 10.h),
+            //   margin: EdgeInsets.only(left: 20.w, right: 20.w, top: 4.h),
             //   decoration: new BoxDecoration(
             //     color: HexColor(
             //         MyColors.white), //new Color.fromRGBO(255, 0, 0, 0.0),
@@ -163,7 +163,7 @@ class Donations_Send extends StatelessWidget {
             //   ),
             // ),
             // Container(
-            //   margin: EdgeInsets.only(left: 20.w, right: 20.w, top: 10.h),
+            //   margin: EdgeInsets.only(left: 20.w, right: 20.w, top: 4.h),
             //   decoration: new BoxDecoration(
             //     color: HexColor(
             //         MyColors.white), //new Color.fromRGBO(255, 0, 0, 0.0),
@@ -188,7 +188,7 @@ class Donations_Send extends StatelessWidget {
             //   ),
             // ),
             // Container(
-            //   margin: EdgeInsets.only(left: 20.w, right: 20.w, top: 10.h),
+            //   margin: EdgeInsets.only(left: 20.w, right: 20.w, top: 4.h),
             //   width: double.infinity,
             //   alignment: Alignment.center,
             //   color: HexColor(MyColors.white),
@@ -248,7 +248,7 @@ class Donations_Send extends StatelessWidget {
             //   ),
             // ),
             // Container(
-            //   margin: EdgeInsets.only(left: 20.w, right: 20.w, top: 10.h),
+            //   margin: EdgeInsets.only(left: 20.w, right: 20.w, top: 4.h),
             //   width: double.infinity,
             //   alignment: Alignment.center,
             //   color: HexColor(MyColors.white),

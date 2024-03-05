@@ -21,76 +21,77 @@ class Widget_DropdownMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return BlocBuilder<CountryListBloc, CountryListState>(
-        builder: (context, state) {
+    return BlocBuilder<CountryListBloc, CountryListState>(builder: (context, state) {
       // return widget here based on BlocA's state
       if (state is CountryList_Loaded_State) {
         Model_Nationalities modelCountryList = (state).model;
-        return SizedBox(
-            width: double.infinity,
-            child: Column(
-                // mainAxisAlignment:
-                // MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  SafeArea(
-                      child: Container(
-                    width: double.infinity,
-                    alignment: Alignment.center,
-                    child: DropdownButtonFormField(
-                      // menuMaxHeight: 50.w,
-                      onSaved: onSaved,
-                      validator: (var val) {
-                        if (val == null) {
-                          return LocaleKeys.nationality_valid.tr();
-                        }
-                        return null;
-                      },
+        return Transform.scale(
+          scaleY: 0.9,
+          child: SizedBox(
+              width: double.infinity,
+              child: Column(
+                  // mainAxisAlignment:
+                  // MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    SafeArea(
+                        child: Container(
+                      width: double.infinity,
+                      alignment: Alignment.center,
+                      child: DropdownButtonFormField(
+                        // menuMaxHeight: 50.w,
+                        onSaved: onSaved,
+                        validator: (var val) {
+                          if (val == null) {
+                            return LocaleKeys.nationality_valid.tr();
+                          }
+                          return null;
+                        },
 
-                      decoration: InputDecoration(
-                        filled: true,
-                        // prefixIcon: widget.icon,
-                        fillColor: HexColor(MyColors.white),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(0.w),
-                          borderSide: BorderSide(
-                            color: HexColor(MyColors.white),
+                        decoration: InputDecoration(
+                          filled: true,
+                          // prefixIcon: widget.icon,
+                          fillColor: HexColor(MyColors.white),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(0.w),
+                            borderSide: BorderSide(
+                              color: HexColor(MyColors.white),
+                            ),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(0.w),
+                            borderSide: BorderSide(
+                              color: HexColor(MyColors.white),
+                            ),
+                          ),
+                          // prefixIcon: Icon(
+                          //   Icons.place_outlined,
+                          //   color: HexColor(MyColors.green),
+                          // ),
+                        ),
+                        // underline: SizedBox.shrink(),
+                        hint: Text(
+                          "  ${LocaleKeys.Nationality.tr()} ",
+                          style: TextStyle(
+                            color: HexColor(MyColors.gray),
+                            fontSize: 16.sp,
                           ),
                         ),
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(0.w),
-                          borderSide: BorderSide(
-                            color: HexColor(MyColors.white),
-                          ),
-                        ),
-                        // prefixIcon: Icon(
-                        //   Icons.place_outlined,
-                        //   color: HexColor(MyColors.green),
-                        // ),
+                        isExpanded: false,
+                        // value: travellers.type,
+                        items: modelCountryList.items.data.map((list) {
+                          return DropdownMenuItem(
+                            child: Text('${Intl.defaultLocale!.contains('en') ? list.nameEn : list.nameAr} ',
+                                style: TextStyle(
+                                  fontSize: 15.sp,
+                                )),
+                            value: list,
+                          );
+                        }).toList(),
+                        onChanged: onChanged,
                       ),
-                      // underline: SizedBox.shrink(),
-                      hint: Text(
-                        "  ${LocaleKeys.Nationality.tr()} ",
-                        style: TextStyle(
-                          color: HexColor(MyColors.gray),
-                          fontSize: 16.sp,
-                        ),
-                      ),
-                      isExpanded: false,
-                      // value: travellers.type,
-                      items: modelCountryList.items.data.map((list) {
-                        return DropdownMenuItem(
-                          child: Text(
-                              '${Intl.defaultLocale!.contains('en') ? list.nameEn : list.nameAr} ',
-                        style: TextStyle(
-                          fontSize: 15.sp,
-                        )),
-                          value: list,
-                        );
-                      }).toList(),
-                      onChanged: onChanged,
-                    ),
-                  ))
-                ]));
+                    ))
+                  ])),
+        );
       } else {
         return Container();
       }

@@ -33,69 +33,72 @@ class Widget_DropdownMenu_Cities extends StatelessWidget {
             selectedValue = selectedValueList.first;
           }
         }
-        return Container(
-            width: double.infinity,
-            padding: const EdgeInsets.symmetric(vertical: 15),
-            child: SafeArea(
-                child: Container(
+        return Transform.scale(
+      scaleY: 0.9,
+          child: Container(
               width: double.infinity,
-              alignment: Alignment.center,
-              child: DropdownButtonFormField(
-                // menuMaxHeight: 50.w,
-                onSaved: onSaved,
-                validator: (var val) {
-                  if (val == null) {
-                    return LocaleKeys.City.tr();
-                  }
-                  return null;
-                },
+              padding: const EdgeInsets.symmetric(vertical: 15),
+              child: SafeArea(
+                  child: Container(
+                width: double.infinity,
+                alignment: Alignment.center,
+                child: DropdownButtonFormField(
+                  // menuMaxHeight: 50.w,
+                  onSaved: onSaved,
+                  validator: (var val) {
+                    if (val == null) {
+                      return LocaleKeys.City.tr();
+                    }
+                    return null;
+                  },
 
-                decoration: InputDecoration(
-                  filled: true,
-                  prefixIcon: icon,
-                  fillColor: HexColor(MyColors.white),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(0.w),
-                    borderSide: BorderSide(
-                      color: HexColor(MyColors.white),
-                    ),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(0.w),
-                    borderSide: BorderSide(
-                      color: HexColor(MyColors.white),
-                    ),
-                  ),
-                  // prefixIcon: Icon(
-                  //   Icons.place_outlined,
-                  //   color: HexColor(MyColors.green),
-                  // ),
-                ),
-                value: selectedValue,
-                // underline: SizedBox.shrink(),
-                hint: Text(
-                  "  ${LocaleKeys.City.tr()} ",
-                  style: TextStyle(
-                    color: HexColor(MyColors.gray),
-                    fontSize: 14.sp,
-                  ),
-                ),
-                isExpanded: false,
-                // value: travellers.type,
-                items: modelCountryList.items.data.map((list) {
-                  return DropdownMenuItem(
-                    child: Text(
-                      '${list.name} ',
-                      style: TextStyle(
-                        fontSize: 15.sp,
+                  decoration: InputDecoration(
+                    filled: true,
+                    prefixIcon: icon,
+                    fillColor: HexColor(MyColors.white),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(0.w),
+                      borderSide: BorderSide(
+                        color: HexColor(MyColors.white),
                       ),
                     ),
-                    value: list,
-                  );
-                }).toList(),
-                onChanged: onChanged,
-              ),
-            )));
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(0.w),
+                      borderSide: BorderSide(
+                        color: HexColor(MyColors.white),
+                      ),
+                    ),
+                    // prefixIcon: Icon(
+                    //   Icons.place_outlined,
+                    //   color: HexColor(MyColors.green),
+                    // ),
+                  ),
+                  value: selectedValue,
+                  // underline: SizedBox.shrink(),
+                  hint: Text(
+                    "  ${LocaleKeys.City.tr()} ",
+                    style: TextStyle(
+                      color: HexColor(MyColors.gray),
+                      fontSize: 14.sp,
+                    ),
+                  ),
+                  isExpanded: false,
+                  // value: travellers.type,
+                  items: modelCountryList.items.data.map((list) {
+                    return DropdownMenuItem(
+                      child: Text(
+                        '${list.name} ',
+                        style: TextStyle(
+                          fontSize: 15.sp,
+                        ),
+                      ),
+                      value: list,
+                    );
+                  }).toList(),
+                  onChanged: onChanged,
+                ),
+              ))),
+        );
       } else {
         return Container();
       }

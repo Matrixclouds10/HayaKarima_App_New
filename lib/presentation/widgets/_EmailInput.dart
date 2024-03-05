@@ -34,7 +34,8 @@ class EmailInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Container(
+    return Transform.scale(
+      scaleY: 0.9,
       child: TextFormField(
         controller: textEditingController,
         keyboardType: TextInputType.emailAddress,

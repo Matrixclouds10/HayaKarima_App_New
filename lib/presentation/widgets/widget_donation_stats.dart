@@ -20,7 +20,7 @@ class Widget_Donation_Stats extends StatelessWidget {
 
     // TODO: implement build
     return Container(
-      margin: EdgeInsets.only(bottom: 10.h, left: 30.w, right: 30.w, top: 10.h),
+      margin: EdgeInsets.only(bottom: 10.h, left: 30.w, right: 30.w, top: 4.h),
       decoration: BoxDecoration(
           color: HexColor(MyColors.green), //new Color.fromRGBO(255, 0, 0, 0.0),
           borderRadius: const BorderRadius.only(
@@ -57,10 +57,13 @@ class Widget_Donation_Stats extends StatelessWidget {
                   margin: EdgeInsets.only(left: 1.w, right: 1.w, top: 5.h),
                   width: 40.w,
                   height: 40.h,
+                  padding: const EdgeInsets.all(4),
                   decoration: BoxDecoration(shape: BoxShape.circle, color: HexColor(MyColors.green)),
-                  child: Text(
-                    "${percent.toStringAsFixed(2)}%",
-                    style: TextStyle(color: HexColor(MyColors.white)),
+                  child: FittedBox(
+                    child: Text(
+                      "${percent.toStringAsFixed(2)}%",
+                      style: TextStyle(color: HexColor(MyColors.white)),
+                    ),
                   ),
                 )
               ],
@@ -73,7 +76,7 @@ class Widget_Donation_Stats extends StatelessWidget {
                         width: width / 2,
                         child: LinearProgressIndicator(
                           backgroundColor: HexColor(MyColors.gray).withOpacity(.5),
-                          color: HexColor(MyColors.Orange_primary),
+                          color: HexColor(MyColors.green),
                           value: val,
                         )),
                   Container(

@@ -439,6 +439,7 @@ class Services {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.remove(ACCESS_TOKEN);
     prefs.remove(STATUS);
+    prefs.clear();
     return true;
   }
 

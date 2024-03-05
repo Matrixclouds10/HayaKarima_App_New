@@ -82,7 +82,7 @@ class _WebViewPageState extends State<WebViewPage> {
             //   },
             // ),
             InAppWebView(
-              initialUrlRequest: URLRequest(url: Uri.parse(widget.link)),
+              initialUrlRequest: URLRequest(url: widget.link),
               initialUserScripts: UnmodifiableListView<UserScript>([]),
               onWebViewCreated: (myController) async {
                 webViewController = myController;

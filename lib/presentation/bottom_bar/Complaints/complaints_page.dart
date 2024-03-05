@@ -91,7 +91,7 @@ class _complaints_page extends State<complaints_page> {
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(left: 20.w, right: 20.w, top: 10.h),
+                margin: EdgeInsets.only(left: 20.w, right: 20.w, top: 4.h),
                 child: NameInput(
                   icon: null,
 
@@ -109,7 +109,7 @@ class _complaints_page extends State<complaints_page> {
               ),
 
               Container(
-                margin: EdgeInsets.only(left: 20.w, right: 20.w, top: 10.h),
+                margin: EdgeInsets.only(left: 20.w, right: 20.w, top: 4.h),
                 child: EmailInput(
                   textEditingController: textEditingController_email,
                   onSaved: (val) {},
@@ -130,7 +130,7 @@ class _complaints_page extends State<complaints_page> {
               ),
 
               Container(
-                margin: EdgeInsets.only(left: 20.w, right: 20.w, top: 10.h),
+                margin: EdgeInsets.only(left: 20.w, right: 20.w, top: 4.h),
                 child: NumberInput(
                   icon: null,
 
@@ -151,7 +151,7 @@ class _complaints_page extends State<complaints_page> {
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(left: 20.w, right: 20.w, top: 10.h),
+                margin: EdgeInsets.only(left: 20.w, right: 20.w, top: 4.h),
                 child: NumberInput(
                   icon: null,
                   // Icon(
@@ -172,7 +172,7 @@ class _complaints_page extends State<complaints_page> {
               ),
 
               Container(
-                margin: EdgeInsets.only(left: 20.w, right: 20.w, top: 10.h),
+                margin: EdgeInsets.only(left: 20.w, right: 20.w, top: 4.h),
                 child: ImgInput(
                   icon: Icon(
                     Icons.image,
@@ -235,9 +235,10 @@ class _complaints_page extends State<complaints_page> {
                   child: Row(
                 children: <Widget>[
                   SizedBox(
-                    width: width / 3,
+                    width: width / 2.1,
                     child: ListTile(
                       title: Text(LocaleKeys.suggestion.tr()),
+                      dense: true,
                       leading: Radio<SingingCharacter>(
                           value: SingingCharacter.suggestion,
                           groupValue: select,
@@ -251,9 +252,11 @@ class _complaints_page extends State<complaints_page> {
                     ),
                   ),
                   SizedBox(
-                    width: width / 3,
+                    width: width / 2.2,
                     child: ListTile(
                       title: Text(LocaleKeys.complaint.tr()),
+                      dense: true,
+                      contentPadding: EdgeInsets.zero,
                       leading: Radio<SingingCharacter>(
                           value: SingingCharacter.complaint,
                           groupValue: select,
@@ -309,7 +312,7 @@ class _complaints_page extends State<complaints_page> {
 
               Container(
                 height: 120.h,
-                margin: EdgeInsets.only(left: 20.w, right: 20.w, top: 10.h),
+                margin: EdgeInsets.only(left: 20.w, right: 20.w, top: 4.h),
                 child: NameInput(
                   icon: Icon(
                     null,
@@ -332,29 +335,11 @@ class _complaints_page extends State<complaints_page> {
                   color: HexColor(MyColors.green),
                   onTap: () async {
                     if (validateAndSave()) {
-                      Complain_Post model = Complain_Post(
-                          name: textEditingController_name.text,
-                          email: textEditingController_email.text,
-                          phone: textEditingController_mobile.text,
-                          type: select == SingingCharacter.complaint ? "complaint" : "suggestion",
-                          description: textEditingController_suggestion.text,
-                          national_id_photo: textEditingController_img.text,
-                          nationality_id: textEditingController_nationality_num.text,
-                          idea_area_id: "$idear_area",
-                          country: "$nationalityid");
+                      Complain_Post model = Complain_Post(name: textEditingController_name.text, email: textEditingController_email.text, phone: textEditingController_mobile.text, type: select == SingingCharacter.complaint ? "complaint" : "suggestion", description: textEditingController_suggestion.text, national_id_photo: textEditingController_img.text, nationality_id: textEditingController_nationality_num.text, idea_area_id: "$idear_area", country: "$nationalityid");
                       // pr.show();
 
                       context.read<ComplainBloc>().add(Start_ComplainEvent());
-                      context.read<ComplainBloc>().add(Submission_ComplainEvent(
-                          name: model.name,
-                          phone: model.phone,
-                          type: model.type,
-                          national_id_photo: model.national_id_photo,
-                          description: model.description,
-                          nationality_id: model.nationality_id,
-                          email: model.email,
-                          idea_area_id: model.idea_area_id,
-                          country: model.country));
+                      context.read<ComplainBloc>().add(Submission_ComplainEvent(name: model.name, phone: model.phone, type: model.type, national_id_photo: model.national_id_photo, description: model.description, nationality_id: model.nationality_id, email: model.email, idea_area_id: model.idea_area_id, country: model.country));
 
                       print("----->onTap  ${model.nationality_id}");
                     }

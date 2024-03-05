@@ -31,6 +31,6 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
         print("----->edit prof error bloc  ${e.toString()}");
         yield Profile_ErrorState(message: '$e');
       }
-    } 
+    }
   }
 }

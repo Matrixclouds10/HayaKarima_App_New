@@ -43,6 +43,7 @@ class Repository {
     final model = await services.deleteProfile();
     return model;
   }
+
   Future<Model_Nationalities> get_nationalities() async {
     final model = await services.get_nationalities();
     return model;

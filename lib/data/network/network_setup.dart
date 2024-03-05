@@ -16,7 +16,7 @@ Future<Dio> networkHeaderSetup(bool requireAuth) async {
   dio.options.headers['Accept'] = 'application/json';
 
   dio.options.sendTimeout = Duration(milliseconds: 30000);
-  dio.options.receiveTimeout =  Duration(milliseconds: 30000);
+  dio.options.receiveTimeout = Duration(milliseconds: 30000);
   dio.options.connectTimeout = Duration(milliseconds: 30000);
   if (token != null) dio.options.headers["authorization"] = "Bearer $token";
   if (Platform.isAndroid) dio.options.headers["type"] = 'android';
@@ -29,7 +29,7 @@ Future<Dio> networkHeaderSetup(bool requireAuth) async {
 
 String networkHandleError(DioError error, {bool canNavigate = true}) {
   switch (error.type) {
-    case DioErrorType.connectionTimeout:
+    case DioErrorType.connectionError:
       break;
     case DioErrorType.receiveTimeout:
       return 'network';

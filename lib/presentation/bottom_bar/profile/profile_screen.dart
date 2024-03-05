@@ -162,7 +162,7 @@ class _Profile_Screen extends State<Profile_Screen> {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.only(top: 20.h),
+                        margin: EdgeInsets.only(top: 8.h),
                         decoration: BoxDecoration(
                             color: HexColor(MyColors.white),
                             //new Color.fromRGBO(255, 0, 0, 0.0),
@@ -284,7 +284,7 @@ class _Profile_Screen extends State<Profile_Screen> {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.only(top: 20.h),
+                        margin: EdgeInsets.only(top: 8.h),
                         child: NameInput(
                           icon: Icon(
                             Icons.person,
@@ -299,7 +299,7 @@ class _Profile_Screen extends State<Profile_Screen> {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.only(top: 20.h),
+                        margin: EdgeInsets.only(top: 8.h),
                         child: NumberInput(
                           icon: Icon(
                             Icons.phone_android,
@@ -318,7 +318,7 @@ class _Profile_Screen extends State<Profile_Screen> {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.only(left: 0.w, right: 0.w, top: 20.h),
+                        margin: EdgeInsets.only(left: 0.w, right: 0.w, top: 8.h),
                         child: EmailInput(
                           textEditingController: textEditingController_email,
                           onSaved: (val) {},
@@ -331,7 +331,7 @@ class _Profile_Screen extends State<Profile_Screen> {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.only(top: 20.h),
+                        margin: EdgeInsets.only(top: 8.h),
                         child: PasswordField(
                           textEditingController: textEditingController_password,
                           onPressed: () {
@@ -344,7 +344,7 @@ class _Profile_Screen extends State<Profile_Screen> {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.only(top: 20.h),
+                        margin: EdgeInsets.only(top: 8.h),
                         width: double.infinity,
                         child: Widget_governments(
                           icon: Icon(
@@ -366,7 +366,7 @@ class _Profile_Screen extends State<Profile_Screen> {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.only(top: 20.h),
+                        margin: EdgeInsets.only(top: 8.h),
                         width: double.infinity,
                         child: Widget_DropdownMenu_Cities(
                           icon: Icon(

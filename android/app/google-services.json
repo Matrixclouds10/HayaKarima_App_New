@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "169565242128",
+    "firebase_url": "https://hayahkarimah-default-rtdb.firebaseio.com",
+    "project_id": "hayahkarimah",
+    "storage_bucket": "hayahkarimah.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:169565242128:android:537aa77f12eae24e49db95",
+        "android_client_info": {
+          "package_name": "com.hayahKarimah.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "169565242128-hrlqm1ggi7vs9n2pieupfnbjf9jc7sto.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hayahKarimah.app",
+            "certificate_hash": "a23996619a0672c344b12aab3446214d1eaba658"
+          }
+        },
+        {
+          "client_id": "169565242128-ktmb60t48039cbmft134qhfi0loar1bv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hayahKarimah.app",
+            "certificate_hash": "6c1d4f1883adb288b31c0958286807ff073e5365"
+          }
+        },
+        {
+          "client_id": "169565242128-b15muc3ls72q1n5hk1spm32r3c0av9th.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATn3djXIrf9Jmpnqpr67Dyt6ddDuopvWk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "169565242128-b15muc3ls72q1n5hk1spm32r3c0av9th.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

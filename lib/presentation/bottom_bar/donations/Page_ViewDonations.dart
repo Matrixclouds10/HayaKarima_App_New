@@ -1,18 +1,10 @@
-import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../bloc/langouage/langouage_cubit.dart';
-import '../../../bloc/step_pageview/pageview_bloc.dart';
 import '../../../constants/my_colors.dart';
 import '../../../generated/locale_keys.g.dart';
-import '../about/About.dart';
-import '../donation_stats/Donation_Stats.dart';
 import 'Donations.dart';
 import 'Donations_Project.dart';
-import 'about_donations_project.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class Page_ViewDonations extends StatefulWidget {

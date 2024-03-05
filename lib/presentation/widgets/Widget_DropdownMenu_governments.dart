@@ -35,68 +35,71 @@ class Widget_governments extends StatelessWidget {
             context.read<CitiesBloc>().add(Submission_CitiesEvent(selectedValueList.first.id));
           }
         }
-        return SizedBox(
-            width: double.infinity,
-            child: Column(
-                // mainAxisAlignment:
-                // MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  SafeArea(
-                      child: Container(
-                    width: double.infinity,
-                    alignment: Alignment.center,
-                    child: DropdownButtonFormField(
-                      // menuMaxHeight: 50.w,
-                      onSaved: onSaved,
-                      validator: (var val) {
-                        if (val == null) {
-                          return LocaleKeys.Governorate.tr();
-                        }
-                        return null;
-                      },
+        return Transform.scale(
+      scaleY: 0.9,
+          child: SizedBox(
+              width: double.infinity,
+              child: Column(
+                  // mainAxisAlignment:
+                  // MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    SafeArea(
+                        child: Container(
+                      width: double.infinity,
+                      alignment: Alignment.center,
+                      child: DropdownButtonFormField(
+                        // menuMaxHeight: 50.w,
+                        onSaved: onSaved,
+                        validator: (var val) {
+                          if (val == null) {
+                            return LocaleKeys.Governorate.tr();
+                          }
+                          return null;
+                        },
 
-                      decoration: InputDecoration(
-                        filled: true,
-                        prefixIcon: icon,
-                        fillColor: HexColor(MyColors.white),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(0.w),
-                          borderSide: BorderSide(
-                            color: HexColor(MyColors.white),
+                        decoration: InputDecoration(
+                          filled: true,
+                          prefixIcon: icon,
+                          fillColor: HexColor(MyColors.white),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(0.w),
+                            borderSide: BorderSide(
+                              color: HexColor(MyColors.white),
+                            ),
                           ),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(0.w),
-                          borderSide: BorderSide(
-                            color: HexColor(MyColors.white),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(0.w),
+                            borderSide: BorderSide(
+                              color: HexColor(MyColors.white),
+                            ),
                           ),
+                          // prefixIcon: Icon(
+                          //   Icons.place_outlined,
+                          //   color: HexColor(MyColors.green),
+                          // ),
                         ),
-                        // prefixIcon: Icon(
-                        //   Icons.place_outlined,
-                        //   color: HexColor(MyColors.green),
-                        // ),
+                        // underline: SizedBox.shrink(),
+                        hint: Text(
+                          "  ${LocaleKeys.Governorate.tr()} ",
+                          style: TextStyle(color: HexColor(MyColors.gray), fontSize: 13.sp, fontWeight: FontWeight.w500),
+                        ),
+                        isExpanded: false,
+                        value: selectedValue,
+                        // value: travellers.type,
+                        items: modelCountryList.items.data.map((list) {
+                          return DropdownMenuItem(
+                            child: Text('${list.name} ',
+                                style: TextStyle(
+                                  fontSize: 15.sp,
+                                )),
+                            value: list,
+                          );
+                        }).toList(),
+                        onChanged: onChanged,
                       ),
-                      // underline: SizedBox.shrink(),
-                      hint: Text(
-                        "  ${LocaleKeys.Governorate.tr()} ",
-                        style: TextStyle(color: HexColor(MyColors.gray), fontSize: 13.sp, fontWeight: FontWeight.w500),
-                      ),
-                      isExpanded: false,
-                      value: selectedValue,
-                      // value: travellers.type,
-                      items: modelCountryList.items.data.map((list) {
-                        return DropdownMenuItem(
-                          child: Text('${list.name} ',
-                              style: TextStyle(
-                                fontSize: 15.sp,
-                              )),
-                          value: list,
-                        );
-                      }).toList(),
-                      onChanged: onChanged,
-                    ),
-                  ))
-                ]));
+                    ))
+                  ])),
+        );
       } else {
         return Container();
       }

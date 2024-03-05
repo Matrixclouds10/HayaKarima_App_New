@@ -4,13 +4,14 @@
 import 'package:flutter/material.dart';
 
 // const String URL = 'https://hayhkarima.com/api/';
-
-
-// const String URL = 'https://hayakarima.orbscope.net/api/';
-const String URL = 'https://hayakarima.dev02.matrix-clouds.com/api/';
-
 // const String URL_MAP = 'https://hayhkarima.com/api/map';
- const String URL_MAP = 'https://hayakarima.dev02.matrix-clouds.com/api/map';
+
+
+
+const String URL = 'https://hayakarima.dev02.matrix-clouds.com/api/';
+const String URL_MAP = 'https://hayakarima.dev02.matrix-clouds.com/api/map';
+
+
 
 /// -----------------------------------
 ///           SharedPreferences Variables

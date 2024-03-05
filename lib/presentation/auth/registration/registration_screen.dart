@@ -111,7 +111,7 @@ class _Registration_Screen extends State<Registration_Screen> {
             ),
 
             Container(
-              margin: EdgeInsets.only(left: 20.w, right: 20.w, top: 10.h),
+              margin: EdgeInsets.only(left: 20.w, right: 20.w, top: 4.h),
               child: NameInput(
                 icon: Icon(
                   Icons.person,
@@ -126,7 +126,7 @@ class _Registration_Screen extends State<Registration_Screen> {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(left: 20.w, right: 20.w, top: 10.h),
+              margin: EdgeInsets.only(left: 20.w, right: 20.w, top: 4.h),
               child: EmailInput(
                 textEditingController: textEditingController_email,
                 onSaved: (val) {},
@@ -139,7 +139,7 @@ class _Registration_Screen extends State<Registration_Screen> {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(left: 20.w, right: 20.w, top: 10.h),
+              margin: EdgeInsets.only(left: 20.w, right: 20.w, top: 4.h),
               child: NumberInput(
                 icon: Icon(
                   Icons.phone_android,
@@ -159,7 +159,7 @@ class _Registration_Screen extends State<Registration_Screen> {
             ),
 
             Container(
-              margin: EdgeInsets.only(left: 20.w, right: 20.w, top: 10.h),
+              margin: EdgeInsets.only(left: 20.w, right: 20.w, top: 4.h),
               child: PasswordField(
                 textEditingController: textEditingController_password,
                 onPressed: () {
@@ -222,7 +222,7 @@ class _Registration_Screen extends State<Registration_Screen> {
             //   ),),
             // ),
             Container(
-              margin: EdgeInsets.only(left: 20.w, right: 20.w, top: 10.h),
+              margin: EdgeInsets.only(left: 20.w, right: 20.w, top: 4.h),
               width: double.infinity,
               child: Widget_governments(
                 icon: Icon(
@@ -241,7 +241,7 @@ class _Registration_Screen extends State<Registration_Screen> {
             ),
 
             Container(
-              margin: EdgeInsets.only(left: 20.w, right: 20.w, top: 5.h),
+              margin: EdgeInsets.only(left: 20.w, right: 20.w, top: 0.h),
               width: double.infinity,
               child: Widget_DropdownMenu_Cities(
                 icon: Icon(
@@ -284,7 +284,7 @@ class _Registration_Screen extends State<Registration_Screen> {
             // ),
 
             Container(
-              margin: EdgeInsets.only(left: 20.w, right: 20.w, top: 20.h),
+              margin: EdgeInsets.only(left: 20.w, right: 20.w, top: 4.h),
               height: 50.h,
               child: Button_Widget(
                 fontSize: 18.sp,

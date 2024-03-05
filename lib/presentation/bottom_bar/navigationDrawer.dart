@@ -36,17 +36,17 @@ class NavigationDrawer extends StatelessWidget {
               Navigator.of(context).pop();
             },
             color: MyColors.black),
-        createDrawerBodyItem(
-            path: 'assets/icon_two.svg',
-            text: LocaleKeys.Donation_stats.tr(),
-            onTap: () async {
-              onTap();
-              await Future.delayed(const Duration(milliseconds: 100));
-              context.read<PageviewBloc>().add(Start_Eventstep());
-              context.read<PageviewBloc>().add(NextStep_one(2, 2));
-              Navigator.of(context).pop();
-            },
-            color: MyColors.black),
+        // createDrawerBodyItem(
+        //     path: 'assets/icon_two.svg',
+        //     text: LocaleKeys.Donation_stats.tr(),
+        //     onTap: () async {
+        //       onTap();
+        //       await Future.delayed(const Duration(milliseconds: 100));
+        //       context.read<PageviewBloc>().add(Start_Eventstep());
+        //       context.read<PageviewBloc>().add(NextStep_one(2, 2));
+        //       Navigator.of(context).pop();
+        //     },
+        //     color: MyColors.black),
 
         createDrawerBodyItem(
             path: 'assets/icon_map.svg',
@@ -165,10 +165,10 @@ class NavigationDrawer extends StatelessWidget {
   Widget createDrawerHeader() {
     return SafeArea(
         child: Container(
-      height: 200.h,
-      margin: EdgeInsets.only(bottom: 30.h),
+      height: 160.h,
+      padding: EdgeInsets.all(4),
       color: HexColor(MyColors.white),
-      child: DrawerHeader(margin: const EdgeInsets.only(top: 15, left: 15, right: 15, bottom: 15), padding: EdgeInsets.zero, decoration: const BoxDecoration(image: DecorationImage(image: AssetImage('assets/logo.png'))), child: Stack(children: const <Widget>[])),
+      child: DrawerHeader(child: Image.asset('assets/logo.png')),
     ));
   }
 
@@ -186,7 +186,8 @@ class NavigationDrawer extends StatelessWidget {
             padding: EdgeInsets.only(left: 20.w, right: 20.w),
             child: Text(
               text,
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600, color: HexColor(color)),
+              textScaleFactor: 1,
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: HexColor(color)),
             ),
           )
         ],

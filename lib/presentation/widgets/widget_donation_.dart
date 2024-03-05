@@ -24,7 +24,7 @@ class Widget_Donation extends StatelessWidget {
           context.read<PageviewBloc>().add(NextStep_one(1, 1));
         },
         title: Container(
-          margin: EdgeInsets.only(bottom: 10.h, left: 5.w, right: 5.w, top: 10.h),
+          margin: EdgeInsets.only(bottom: 10.h, left: 5.w, right: 5.w, top: 4.h),
           decoration: new BoxDecoration(
               color: HexColor(MyColors.green), //new Color.fromRGBO(255, 0, 0, 0.0),
               borderRadius: new BorderRadius.only(

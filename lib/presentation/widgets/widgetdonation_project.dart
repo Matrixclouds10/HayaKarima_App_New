@@ -23,6 +23,8 @@ class WidgetDonation_Project extends StatelessWidget {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
+
+    
     // TODO: implement build
     return ListTile(
         onTap: () {
@@ -84,18 +86,26 @@ class WidgetDonation_Project extends StatelessWidget {
                                       style: TextStyle(fontSize: 18.sp, color: HexColor(MyColors.black), fontWeight: FontWeight.w600),
                                     ),
                                   ),
+                                  SizedBox(
+                                      width: width / 2,
+                                      child: LinearProgressIndicator(
+                                        backgroundColor: HexColor(MyColors.gray).withOpacity(.5),
+                                        color: HexColor(MyColors.green),
+                                        value: double.parse(data_project.donationNeeded.replaceAll(',', '')) / double.parse("${data_project.budget}"),
+                                      )),
                                   Container(
                                     width: width * .50,
                                     margin: EdgeInsets.only(left: 3.w, right: 3.w, bottom: 5.h),
                                     child: Row(
                                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                       children: <Widget>[
-                                        Container(
-                                          alignment: Alignment.center,
-                                          margin: EdgeInsets.only(left: 3.w, right: 3.w, top: 10.h, bottom: 10.h),
-                                          child: Text(
-                                            "L.E ${data_project.budget}",
-                                            style: TextStyle(color: HexColor(MyColors.green), fontSize: 20.sp, overflow: TextOverflow.ellipsis, fontWeight: FontWeight.w600),
+                                        Expanded(
+                                          child: Container(
+                                            margin: EdgeInsets.only(left: 3.w, right: 3.w, top: 10.h, bottom: 10.h),
+                                            child: Text(
+                                              "L.E ${data_project.budget}",
+                                              style: TextStyle(color: HexColor(MyColors.green), overflow: TextOverflow.ellipsis, fontWeight: FontWeight.w600),
+                                            ),
                                           ),
                                         ),
                                         Container(
